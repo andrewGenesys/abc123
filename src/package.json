@@ -3,7 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "webpack-dev-server --progress"
+    "start": "NODE_ENV=production webpack -p --config webpack.config.js",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
   },
   "license": "MIT",
   "devDependencies": {

@@ -1,3 +1,4 @@
+const path = require("path");
 function getStyleUse(bundleFilename) {
   return [
     {
@@ -25,6 +26,7 @@ module.exports = [
     output: {
       // This is necessary for webpack to compile, but we never reference this js file.
       filename: "style-bundle-login.js",
+      path: path.resolve(__dirname, "dist"),
     },
     module: {
       rules: [
@@ -40,6 +42,7 @@ module.exports = [
     output: {
       // This is necessary for webpack to compile, but we never reference this js file.
       filename: "style-bundle-home.js",
+      path: path.resolve(__dirname, "dist"),
     },
     module: {
       rules: [
@@ -54,6 +57,7 @@ module.exports = [
     entry: "./login.js",
     output: {
       filename: "bundle-login.js",
+      path: path.resolve(__dirname, "dist"),
     },
     module: {
       loaders: [
@@ -69,6 +73,7 @@ module.exports = [
     entry: "./home.js",
     output: {
       filename: "bundle-home.js",
+      path: path.resolve(__dirname, "dist"),
     },
     module: {
       loaders: [
