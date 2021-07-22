@@ -25,30 +25,30 @@
       <h1 class="shrine-title">SHRINE</h1>
     </div>
     <div class="mdc-drawer__content">
-      <div>
-        <label for="#enter_deploymentId" class="mdc-image-list__label">Enter Deployment ID</label>
-        <input type="text" id="enter_deploymentId">
-        <br />
-        <label for="#enter_environment" class="mdc-image-list__label">Choose Environment</label>
-        <select id="enter_environment">
-          <option selected value="dev">Dev</option>
-          <option value="test">Test</option>
-          <!-- Prod envs disabled for now -->
-          <option value="apne1">Prod APNE1</option>
-          <option value="apne2">Prod APNE2</option>
-          <option value="apse2">Prod APSE2</option>
-          <option value="aps1">Prod APS1</option>
-          <option value="cac1">Prod CAC1</option>
-          <option value="euc1">Prod EUC1</option>
-          <option value="euw1">Prod EUW1</option>
-          <option value="euw2">Prod EUW2</option>
-          <option value="use1">Prod USE1</option>
-          <option value="usw2">Prod USW2</option>
-          <option value="fedramp-use2-core">Prod FEDRAMP-USE2-CORE</option>
-        </select>
-        <br />
-        <button class="mdc-list-item" onclick="submit()">Submit</button>
-      </div>
+    <div class="mdc-list">
+      <label for="#enter_deploymentId" class="mdc-image-list__label">Enter Deployment ID</label>
+      <input type="text" id="enter_deploymentId">
+      <br />
+      <label for="#enter_environment" class="mdc-image-list__label">Choose Environment</label>
+      <select id="enter_environment">
+        <option selected value="dev">Dev</option>
+        <option value="test">Test</option>
+        <!-- Prod envs disabled for now -->
+        <option value="apne1">Prod APNE1</option>
+        <option value="apne2">Prod APNE2</option>
+        <option value="apse2">Prod APSE2</option>
+        <option value="aps1">Prod APS1</option>
+        <option value="cac1">Prod CAC1</option>
+        <option value="euc1">Prod EUC1</option>
+        <option value="euw1">Prod EUW1</option>
+        <option value="euw2">Prod EUW2</option>
+        <option value="use1">Prod USE1</option>
+        <option value="usw2">Prod USW2</option>
+        <option value="fedramp-use2-core">Prod FEDRAMP-USE2-CORE</option>
+      </select>
+      <br />
+      <button class="mdc-list-item" onclick="submit()">Submit</button>
+    </div>
       <nav class="mdc-list">
         <a class="mdc-list-item mdc-list-item--activated" aria-selected="true" tabindex="0" href="./home.html">
           <span class="mdc-list-item__text">Featured</span>
@@ -183,8 +183,25 @@
   <script src="bundle-home.js" async></script>
   <script type="text/javascript" charset="utf-8">
 
-var sGenesysJSDomain = "https://apps.inindca.com";
-  window._genJSVersion = "1.2.0";
+var DOMAINS = {
+		  // [ENVS.LOCAL]: 'mypurelocal.com',
+		  'dev': 'inindca.com',
+		  'test': 'inintca.com',
+		  'apne1': 'mypurecloud.jp',
+		  'apne2': 'apne2.pure.cloud',
+		  'apse2': 'mypurecloud.com.au',
+		  'aps1': 'aps1.pure.cloud',
+		  'cac1': 'cac1.pure.cloud',
+		  'euc1': 'mypurecloud.de',
+		  'euw1': 'mypurecloud.ie',
+		  'euw2': 'euw2.pure.cloud',
+		  'use1': 'mypurecloud.com',
+		  'usw2': 'usw2.pure.cloud',
+		  'fedramp-use2-core': 'use2.us-gov-pure.cloud',
+		};
+
+		var sGenesysJSDomain = "https://apps."+DOMAINS[window.localStorage.getItem('genesys_environment')];
+    window._genJSVersion = "1.2.0";
 		(function (g, e, n, es, ys) {
 			g['_genesysJs'] = e; g[e] = g[e] || function () { (g[e].q = g[e].q || []).push(arguments) };
 			g[e].t = 1 * new Date(); g[e].c = es;
