@@ -26,6 +26,30 @@
       <h1 class="shrine-title">SHRINE</h1>
     </div>
     <div class="mdc-drawer__content">
+      <div>
+        <label for="#enter_deploymentId">Enter Deployment ID</label>
+        <input type="text" id="enter_deploymentId">
+        <br />
+        <label for="#enter_environment">Choose Environment</label>
+        <select id="enter_environment">
+          <option selected value="dev">Dev</option>
+          <option value="test">Test</option>
+          <!-- Prod envs disabled for now -->
+          <option value="apne1">Prod APNE1</option>
+          <option value="apne2">Prod APNE2</option>
+          <option value="apse2">Prod APSE2</option>
+          <option value="aps1">Prod APS1</option>
+          <option value="cac1">Prod CAC1</option>
+          <option value="euc1">Prod EUC1</option>
+          <option value="euw1">Prod EUW1</option>
+          <option value="euw2">Prod EUW2</option>
+          <option value="use1">Prod USE1</option>
+          <option value="usw2">Prod USW2</option>
+          <option value="fedramp-use2-core">Prod FEDRAMP-USE2-CORE</option>
+        </select>
+        <br />
+        <button onclick="submit()">Submit</button>
+      </div>
       <nav class="mdc-list">
         <a class="mdc-list-item mdc-list-item--activated" aria-selected="true" tabindex="0" href="./home.html">
           <span class="mdc-list-item__text">Featured</span>
@@ -165,10 +189,20 @@
 			g[e].t = 1 * new Date(); g[e].c = es;
 			ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
 		})(window, 'Genesys', sGenesysJSDomain+'/genesys-bootstrap/' + _genJSVersion + '/genesys.min.js', {
-			environment: 'dev',//window.localStorage.getItem('genesys_environment'),
-			deploymentId: '5160085b-9ba1-4c3b-a367-774deabddb9c',//window.localStorage.getItem('genesys_deployment_id'),
+			environment: window.localStorage.getItem('genesys_environment'),
+			deploymentId: window.localStorage.getItem('genesys_deployment_id'),
 			debug: true
 		});
+
+    function submit() {
+			var deployment_id = document.getElementById('enter_deploymentId').value;
+			window.localStorage.setItem('genesys_deployment_id', deployment_id);
+
+			var environment = document.getElementById('enter_environment').value;
+			window.localStorage.setItem('genesys_environment', environment);
+
+			window.location.reload();
+		}
 	</script>
 </body>
 </html>
