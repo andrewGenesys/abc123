@@ -88,3 +88,8 @@
   overflow: auto;
   z-index: 0; // Elevate over the drawer
 }
+
+iframe {
+  top: 0;
+  right: 0;
+}
