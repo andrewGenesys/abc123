@@ -25,11 +25,11 @@
       <h1 class="shrine-title">SHRINE</h1>
     </div>
     <div class="mdc-drawer__content">
-      <div>
-        <label for="#enter_deploymentId">Enter Deployment ID</label>
+      <div class="mdc-list">
+        <label for="#enter_deploymentId" class="mdc-image-list__label">Enter Deployment ID</label>
         <input type="text" id="enter_deploymentId">
         <br />
-        <label for="#enter_environment">Choose Environment</label>
+        <label for="#enter_environment" class="mdc-image-list__label">Choose Environment</label>
         <select id="enter_environment">
           <option selected value="dev">Dev</option>
           <option value="test">Test</option>
@@ -47,7 +47,7 @@
           <option value="fedramp-use2-core">Prod FEDRAMP-USE2-CORE</option>
         </select>
         <br />
-        <button onclick="submit()">Submit</button>
+        <button class="mdc-list-item" onclick="submit()">Submit</button>
       </div>
       <nav class="mdc-list">
         <a class="mdc-list-item mdc-list-item--activated" aria-selected="true" tabindex="0" href="./home.html">
