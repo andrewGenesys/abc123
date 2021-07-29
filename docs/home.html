@@ -210,6 +210,33 @@ var DOMAINS = {
 			deploymentId: window.localStorage.getItem('genesys_deployment_id'),
 			debug: true
 		});
+    var sDeploymentId = "",
+        sEnvironment = window.localStorage.getItem("genesys_environment") || "test",
+        sDeploymentId = window.localStorage.getItem("genesys_deployment_id");
+
+      if (sEnvironment == "dev") {
+        sDeploymentId = sDeploymentId || "0fb716bb-b882-4e69-9b0b-18daf8707b61";
+      } else if (sEnvironment == "test") {
+        sDeploymentId = sDeploymentId || "f903901f-f72e-4155-8639-b2a0e9a2ab96";
+      } else if (sEnvironment == "euc1") {
+        sDeploymentId = sDeploymentId || "81839183-9a5d-444c-9a43-e32931cd97e2";
+      } else if (sEnvironment == "use1") {
+        sDeploymentId = sDeploymentId || "8f5d50e3-3cb0-4ade-a244-0d96088b6899";
+      }
+
+      if (window.localStorage.getItem('genesys_deployment_id')) {
+				document.getElementById('enter_deploymentId').value = window.localStorage.getItem('genesys_deployment_id');
+			} else {
+				window.localStorage.setItem('genesys_deployment_id', sDeploymentId);
+				document.getElementById('enter_deploymentId').value = window.localStorage.getItem('genesys_deployment_id');
+			}
+
+			if (window.localStorage.getItem('genesys_environment')) {
+				document.getElementById('enter_environment').value = window.localStorage.getItem('genesys_environment');
+			} else {
+				window.localStorage.setItem('genesys_environment', sEnvironment);
+				document.getElementById('enter_environment').value = window.localStorage.getItem('genesys_environment');
+			}
 
     function submit() {
 			var deployment_id = document.getElementById('enter_deploymentId').value;
