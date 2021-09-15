@@ -75,12 +75,11 @@ var DOMAINS = {
 		};
 
 		var sGenesysJSDomain = "https://apps."+DOMAINS[window.localStorage.getItem('genesys_environment')];
-    window._genJSVersion = "1.2.0";
 		(function (g, e, n, es, ys) {
 			g['_genesysJs'] = e; g[e] = g[e] || function () { (g[e].q = g[e].q || []).push(arguments) };
 			g[e].t = 1 * new Date(); g[e].c = es;
 			ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
-		})(window, 'Genesys', sGenesysJSDomain+'/genesys-bootstrap/' + _genJSVersion + '/genesys.min.js', {
+		})(window, 'Genesys', sGenesysJSDomain+'/genesys-bootstrap/genesys.min.js', {
 			environment: window.localStorage.getItem('genesys_environment'),
 			deploymentId: window.localStorage.getItem('genesys_deployment_id'),
 			debug: true
