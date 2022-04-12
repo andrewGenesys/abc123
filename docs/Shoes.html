@@ -4,13 +4,65 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- EUW1 (mypurecloud.ie) -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://*.inintca.com https://*.mypurecloud.ie https://*.amazonaws.com https://*.nr-data.net https://*.newrelic.com https://*.euw1.pure.cloud wss://*.mypurecloud.ie wss://*.inintca.com wss://*.euw1.pure.cloud; script-src 'self' 'unsafe-inline' https://*.inintca.com https://*.mypurecloud.ie https://*.nr-data.net https://*.newrelic.com https://*.euw1.pure.cloud; media-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; object-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; child-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; img-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; style-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://*.inintca.com https://*.mypurecloud.ie https://global.oktacdn.com https://*.amazonaws.com https://*.nr-data.net https://*.newrelic.com https://*.euw1.pure.cloud wss://*.mypurecloud.ie wss://*.inintca.com wss://*.euw1.pure.cloud; script-src 'self' 'unsafe-inline' https://*.inintca.com https://global.oktacdn.com https://*.mypurecloud.ie https://*.nr-data.net https://*.newrelic.com https://*.euw1.pure.cloud; media-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; object-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; child-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; img-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; style-src 'self';">
 
   <title>Shrine (MDC Web Example App)</title>
   <link rel="shortcut icon" href="https://material.io/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
   <link rel="stylesheet" href="bundle-home.css">
+  <style>
+    .auth{
+			margin: 16px 0px 8px 0px;
+			padding: 8px;
+			border-radius: 4px;
+			border: 1px solid;
+			right: 0;
+			top: 24px;
+			max-width: 450px;
+		}
+
+		.auth-input-content{
+			padding: 6px;
+		}
+
+		.auth-input{
+			float: right;
+			margin-left: 36px;
+		}
+
+		.auth-btn{
+			border-style: solid;
+			border-width: 1px;
+			text-decoration: none;
+			padding: 4px;
+			border-color: grey;
+			border-radius: 4px;
+				text-align: center;
+			display: block;
+			cursor: pointer;
+		}
+
+		.auth-btn:hover{
+			background-color: rgb(0, 153, 255);
+			color: white;
+		}
+
+		.auth-submit{
+			margin: 12px;
+			padding: 10px
+		}
+
+		.auth-input-error{
+			border: 1px solid red;
+		}
+
+		.auth-error{
+			color: red;
+			display: none;
+			text-align: center;
+		}
+  </style>
 </head>
 <body class="home">
   <aside class="mdc-drawer shrine-drawer">
@@ -125,7 +177,7 @@
 
       <script src="https://global.oktacdn.com/okta-auth-js/5.2.2/okta-auth-js.min.js" type="text/javascript"></script>
 
-	<script type="text/javascript" src="./authprovider.min.js" defer></script>
+	<script type="text/javascript" src="./authprovider.js" defer></script>
 
 
       <nav class="mdc-list">
