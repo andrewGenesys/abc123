@@ -4,65 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- EUW1 (mypurecloud.ie) -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://*.inintca.com https://*.mypurecloud.ie https://global.oktacdn.com https://*.amazonaws.com https://*.nr-data.net https://*.newrelic.com https://*.euw1.pure.cloud wss://*.mypurecloud.ie wss://*.inintca.com wss://*.euw1.pure.cloud; script-src 'self' 'unsafe-inline' https://*.inintca.com https://global.oktacdn.com https://*.mypurecloud.ie https://*.nr-data.net https://*.newrelic.com https://*.euw1.pure.cloud; media-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; object-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; child-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; img-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; style-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://*.inintca.com https://*.mypurecloud.ie https://global.oktacdn.com https://*.nr-data.net https://*.newrelic.com https://*.euw1.pure.cloud wss://*.mypurecloud.ie wss://*.inintca.com wss://*.euw1.pure.cloud; script-src 'self' 'unsafe-inline' https://*.inintca.com https://global.oktacdn.com https://*.mypurecloud.ie https://*.nr-data.net https://*.newrelic.com https://*.euw1.pure.cloud; media-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; object-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; child-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; img-src 'self' https://*.inintca.com https://*.mypurecloud.ie https://*.euw1.pure.cloud; style-src 'self';">
 
   <title>Shrine (MDC Web Example App)</title>
   <link rel="shortcut icon" href="https://material.io/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
   <link rel="stylesheet" href="bundle-home.css">
-  <style>
-    .auth{
-			margin: 16px 0px 8px 0px;
-			padding: 8px;
-			border-radius: 4px;
-			border: 1px solid;
-			right: 0;
-			top: 24px;
-			max-width: 450px;
-		}
-
-		.auth-input-content{
-			padding: 6px;
-		}
-
-		.auth-input{
-			float: right;
-			margin-left: 36px;
-		}
-
-		.auth-btn{
-			border-style: solid;
-			border-width: 1px;
-			text-decoration: none;
-			padding: 4px;
-			border-color: grey;
-			border-radius: 4px;
-				text-align: center;
-			display: block;
-			cursor: pointer;
-		}
-
-		.auth-btn:hover{
-			background-color: rgb(0, 153, 255);
-			color: white;
-		}
-
-		.auth-submit{
-			margin: 12px;
-			padding: 10px
-		}
-
-		.auth-input-error{
-			border: 1px solid red;
-		}
-
-		.auth-error{
-			color: red;
-			display: none;
-			text-align: center;
-		}
-  </style>
+  
 </head>
 <body class="home">
   <aside class="mdc-drawer shrine-drawer">
@@ -104,81 +53,6 @@
         <br />
         <button class="mdc-list-item" onclick="submit()">Submit</button>
       </div>
-
-      <div class="auth">
-        <div class="auth-form">
-          <div class="auth-input-content">
-            <label for="authProvider">Choose your Auth provider</label>
-            <select id="authProvider" class="auth-input">
-              <option value="okta" selected>OKTA</option>
-              <option value="google">Google</option>
-            </select>
-          </div>
-    
-          <div id = "okta_input_form">				
-            <div class="auth-input-content">
-              <label for="oktaURL">Your OKTA URL</label>
-              <input type="text" id="oktaURL" name="oktaURL" class="auth-input" >
-            </div>
-    
-            <div class="auth-input-content">
-              <label for="authClientId">Client Id</label>
-              <input type="text" id="authClientId" name="authClientId" class="auth-input">
-            </div>
-    
-              <div class="auth-input-content">
-                <label for="authScope">Choose your Auth Scope</label>
-                <select id="authScope" class="auth-input">
-                  <option value="offline_access" selected>offline_access</option>
-                  <option value="none">None</option>
-                </select>
-              </div>
-          </div>
-    
-          <div id = "google_input_form" style="display: none">
-            <div class="auth-input-content">
-              <label for="googleClientID">Client Id</label>
-              <input type="text" id="googleClientID" name="googleClientID" class="auth-input" >
-            </div>
-          </div>
-    
-          <div class="auth-input-content" id="pkce-flow">
-            <label for="pkce">PKCE Flow</label>
-            <input type="checkbox" id="pkce" name="pkce" class="auth-input"></br>
-          </div>
-    
-          <div class="auth-input-content" id="optional-parameters">
-            <label for="optionalParameters">Optional Parameters</label>
-            <input type="checkbox" id="optionalParameters" name="optionalParameters" class="auth-input"></br>
-          </div>
-    
-          <div id="showOptionalParameters" style="display:none" class="auth-input-content">
-            <span class="auth-input-content">
-              <label for="maxAge">Max Age</label>
-              <input type="number" id="maxAge" name="maxAge">
-            </span>
-          </div>
-    
-        </div>
-        <div class="auth-submit">
-          <a id="authLoginBtn" class="auth-btn">Login</a>
-        </div>
-    
-        <div class="auth-submit">
-          <a id="authLogoutBtn" class="auth-btn">Logout</a>
-        </div>
-    
-        <div id="loading" class="auth-submit">
-          <div class="loading auth-btn"></div>
-        </div>
-    
-        <div id="authError" class="auth-error"></div>
-      </div>
-
-      <script src="https://global.oktacdn.com/okta-auth-js/5.2.2/okta-auth-js.min.js" type="text/javascript"></script>
-
-	<script type="text/javascript" src="./authprovider.js" defer></script>
-
 
       <nav class="mdc-list">
         <a class="mdc-list-item mdc-list-item--activated" aria-selected="true" tabindex="0" href="./home.html">
