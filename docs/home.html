@@ -49,6 +49,8 @@
           <option value="usw2">Prod USW2</option>
           <option value="fedramp-use2-core">Prod FEDRAMP-USE2-CORE</option>
           <option value="maximus-use2">Prod MAXIMUS-USE2</option>
+				<option value="sae1">Prod SAE1</option>
+
         </select>
         <br />
         <button class="mdc-list-item" onclick="submit()">Submit</button>
@@ -200,7 +202,9 @@ var DOMAINS = {
 		  'use1': 'mypurecloud.com',
 		  'usw2': 'usw2.pure.cloud',
 		  'fedramp-use2-core': 'use2.us-gov-pure.cloud',
-      'maximus-use2': 'use2.maximus-pure.cloud'
+      'maximus-use2': 'use2.maximus-pure.cloud',
+			'sae1': 'sae1.pure.cloud',
+
 		};
 
 		var sGenesysJSDomain = "https://apps."+DOMAINS[window.localStorage.getItem('genesys_environment')];
